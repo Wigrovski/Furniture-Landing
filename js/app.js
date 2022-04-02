@@ -9,5 +9,8 @@ $('.nav_slider').slick({
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
-    asNavFor: '.best_slider'
+    asNavFor: '.best_slider',
+    autoplay: true,
+    autoplaySpeed: 2000,
+    
 });

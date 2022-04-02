@@ -5,29 +5,30 @@ $bold: 700
 $reg: 400
 body
     margin: 0
-
 .container
     max-width: 1170px
     margin: 0 auto
+
 header
     background: #66A96B
-    height: 665px
+    height: 684px    
     .menu_content
+        height: 57px
         font-weight: $semi
         font-family: $font
         display: flex
         flex-direction: row
         justify-content: space-between
         margin-bottom: 121px
+        padding-top: 95px
+    
     .logo
         display: flex
         align-items: center
-        margin-top: 92px
         font-size: 30px
         color: #ffff
     .menu
         display: flex
-        margin-top: 95px
         font-size: 18px
         
         ul
@@ -35,8 +36,7 @@ header
             justify-content: space-between
             width: 423px
             margin-right: 93px
-            color: #ffff
-            
+            color: #ffff            
             li
                 list-style: none
                 a
@@ -54,6 +54,10 @@ header
         box-shadow: -4px 8px 40px rgba(59,95,69,0.31)
         &:active, &:visited
             color: #3B5F41
+        &:hover
+            transition: .6s
+            box-shadow: 4px 8px 40px rgba(59,95,69,0.8)
+            background: #f5fff2
     .header
         font-family: $font
         display: flex
@@ -93,12 +97,12 @@ header
                 top: 0
                 position: absolute
                 max-width: 100%
-                left: 320px
+                left: 33%
             &__sofa
                 position: absolute
                 max-width: 100%
                 top: 165px
-                left: 40px
+                left: 10px
 
                 
 
@@ -109,11 +113,13 @@ header
     display: flex
     justify-content: space-between
     &_content
+        display: flex
+        flex-direction: column
         width: 236px
+        justify-content: space-between
         &__title
            font-weight: $bold
            font-size: 48px
-           margin-bottom: 56px
         &__shop
             display: flex
             justify-content: space-between
@@ -303,6 +309,13 @@ header
         margin-right: 84px
         &__item
             max-width: 587px
+            border-radius: 20px
+            
+            img
+                width: 100%
+                height: auto
+                border-radius: 20px
+                
     &_info
         max-width: 387px
         margin-bottom: 80px       
@@ -352,6 +365,7 @@ header
             line-height: 28px
         .btn
             display: flex
+            cursor: pointer
             justify-content: center
             align-items: center
             width: 228px
@@ -361,10 +375,59 @@ header
             background: #66A96B
             color: #ffffff
             font-weight: $semi
+            &:hover
+                background: #7fc283
             img
               width: 30px
               color: #ffff
-              margin-right: 20px  
+              margin-right: 20px
+            &:active
+                transform: scale(.8)
+                transition: .3s
+.nav_slider
+    position: relative
+    margin: 0 auto
+    display: flex
+    align-content: center
+    width: 709px
+    gap: 20px
+    &__item
+        cursor: pointer
+         
+        img
+            width: 120px
+            min-height: 100px
+            border-radius: 10px           
+            
+        
+    & .slick-arrow
+        width: 44px
+        height: 44px
+        position: absolute
+        z-index: 2
+        top: 25%
+        font-size: 0
+        cursor: pointer
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    & .slick-prev
+        position: absolute
+        left: -100px
+        background: url('https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png') 0 0 / 100% no-repeat
+        border: 1px solid #c2c2c2
+        border-radius: 50%
+    & .slick-next
+        position: absolute
+        right: -100px
+        background: url('https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png')  0 0 / 100% no-repeat
+        border: 1px solid #c2c2c2
+        border-radius: 50%
+    & .slick-prev
+        &:active
+            transform: scale(.8) 
+    & .slick-next
+        &:active
+            transform: scale(.8)
+        
 .offer
     margin-bottom: 180px
     .container
@@ -446,7 +509,12 @@ header
         font-weight: $semi
         color: #000
         margin-bottom: 37px
+    form
+        display: flex
+        justify-content: space-between
+    
     input
+        width: 100%
         border: none
         background: #F5F5F5
         font-size: 14px
@@ -460,16 +528,14 @@ header
 @media screen
     header
         @media (max-width: 1000px)
-            height: 627px
-            margin: 0 auto
-            // .menu_content
-            //     @media (max-width: 1000px)
-            //         margin-top: 50px
-
+            height: 550px
+            margin-bottom: 20px
+            .menu_content
+                    padding-top: 30px
             .header_img
                 @media (max-width: 1000px)
                     &__frame
-                        left: 50%
+                        left: 30%
                     &__sofa
                         left: 0px
             .header_content
@@ -492,6 +558,7 @@ header
                 @media (max-width: 1000px)
                     flex-direction: column
                     height: 100%
+                    margin-bottom: 100px
             .latest_content
                 @media (max-width: 1000px)
                     width: 100%
@@ -522,6 +589,15 @@ header
                         @media (max-width: 1000px)
                             font-size: 16px
                             margin-bottom: 25px
+            .best_info
+                @media (max-width: 1000px)
+                    &__price
+                        margin-bottom: 18px
+                    &__title
+                        margin-bottom: 18px
+                    &__discription
+                        font-size: 14px
+
 
                     
 

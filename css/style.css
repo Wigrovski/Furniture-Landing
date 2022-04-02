@@ -11,29 +11,29 @@ body {
 
 header {
   background: #66A96B;
-  height: 665px;
+  height: 684px;
 }
 
 header .menu_content {
+  height: 57px;
   font-weight: 600;
   font-family: Open Sans, serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 121px;
+  padding-top: 95px;
 }
 
 header .logo {
   display: flex;
   align-items: center;
-  margin-top: 92px;
   font-size: 30px;
   color: #ffff;
 }
 
 header .menu {
   display: flex;
-  margin-top: 95px;
   font-size: 18px;
 }
 
@@ -70,6 +70,12 @@ header .login, header .header_content__btn {
 
 header .login:active, header .login:visited, header .header_content__btn:active, header .header_content__btn:visited {
   color: #3B5F41;
+}
+
+header .login:hover, header .header_content__btn:hover {
+  transition: .6s;
+  box-shadow: 4px 8px 40px rgba(59, 95, 69, 0.8);
+  background: #f5fff2;
 }
 
 header .header {
@@ -126,14 +132,14 @@ header .header_img__frame {
   top: 0;
   position: absolute;
   max-width: 100%;
-  left: 320px;
+  left: 33%;
 }
 
 header .header_img__sofa {
   position: absolute;
   max-width: 100%;
   top: 165px;
-  left: 40px;
+  left: 10px;
 }
 
 .latest {
@@ -145,13 +151,15 @@ header .header_img__sofa {
 }
 
 .latest_content {
+  display: flex;
+  flex-direction: column;
   width: 236px;
+  justify-content: space-between;
 }
 
 .latest_content__title {
   font-weight: 700;
   font-size: 48px;
-  margin-bottom: 56px;
 }
 
 .latest_content__shop {
@@ -421,6 +429,13 @@ header .header_img__sofa {
 
 .best_slider__item {
   max-width: 587px;
+  border-radius: 20px;
+}
+
+.best_slider__item img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
 }
 
 .best_info {
@@ -489,6 +504,7 @@ header .header_img__sofa {
 
 .best_info .btn {
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   width: 228px;
@@ -500,10 +516,73 @@ header .header_img__sofa {
   font-weight: 600;
 }
 
+.best_info .btn:hover {
+  background: #7fc283;
+}
+
 .best_info .btn img {
   width: 30px;
   color: #ffff;
   margin-right: 20px;
+}
+
+.best_info .btn:active {
+  transform: scale(0.8);
+  transition: .3s;
+}
+
+.nav_slider {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  align-content: center;
+  width: 709px;
+  gap: 20px;
+}
+
+.nav_slider__item {
+  cursor: pointer;
+}
+
+.nav_slider__item img {
+  width: 120px;
+  min-height: 100px;
+  border-radius: 10px;
+}
+
+.nav_slider .slick-arrow {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  z-index: 2;
+  top: 25%;
+  font-size: 0;
+  cursor: pointer;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav_slider .slick-prev {
+  position: absolute;
+  left: -100px;
+  background: url("https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png") 0 0/100% no-repeat;
+  border: 1px solid #c2c2c2;
+  border-radius: 50%;
+}
+
+.nav_slider .slick-next {
+  position: absolute;
+  right: -100px;
+  background: url("https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png") 0 0/100% no-repeat;
+  border: 1px solid #c2c2c2;
+  border-radius: 50%;
+}
+
+.nav_slider .slick-prev:active {
+  transform: scale(0.8);
+}
+
+.nav_slider .slick-next:active {
+  transform: scale(0.8);
 }
 
 .offer {
@@ -619,7 +698,13 @@ header .header_img__sofa {
   margin-bottom: 37px;
 }
 
+.footer form {
+  display: flex;
+  justify-content: space-between;
+}
+
 .footer input {
+  width: 100%;
   border: none;
   background: #F5F5F5;
   font-size: 14px;
@@ -627,14 +712,17 @@ header .header_img__sofa {
 
 @media screen and (max-width: 1000px) {
   header {
-    height: 627px;
-    margin: 0 auto;
+    height: 550px;
+    margin-bottom: 20px;
+  }
+  header .menu_content {
+    padding-top: 30px;
   }
 }
 
 @media screen and (max-width: 1000px) and (max-width: 1000px) {
   header .header_img__frame {
-    left: 50%;
+    left: 30%;
   }
   header .header_img__sofa {
     left: 0px;
@@ -671,6 +759,7 @@ header .header_img__sofa {
   .container .latest {
     flex-direction: column;
     height: 100%;
+    margin-bottom: 100px;
   }
 }
 
@@ -724,5 +813,17 @@ header .header_img__sofa {
   .container .offer_info__description {
     font-size: 16px;
     margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 1000px) and (max-width: 1000px) {
+  .container .best_info__price {
+    margin-bottom: 18px;
+  }
+  .container .best_info__title {
+    margin-bottom: 18px;
+  }
+  .container .best_info__discription {
+    font-size: 14px;
   }
 }
